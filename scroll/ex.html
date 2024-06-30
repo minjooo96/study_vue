@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="res/style.css">
+</head>
+<body>
+    <section v-bind:style="{top : 0}" data-scroll-index="0">
+        <nav>
+            <div class="el_btn">
+                <span><button type="button" name="button" @click="elControl(1)">el +</button></span>
+                <span><button type="button" name="button" @click="elControl(0)">el -</button></span>
+            </div>
+            <div class="navi">
+                <btn v-for="(item, index) in number" :number="index"></btn>
+            </div>
+        </nav>
+        <article>
+            <box v-for="(item, index) in number" :number="index" :randombg="randombg"></box>
+        </article>
+    </section>
+    <script type="text/javascript" src="res/script.js"></script>
+</body>
+</html>

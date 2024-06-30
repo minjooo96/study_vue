@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* RSM */
+@font-face{
+	font-weight:700;
+	font-style:normal;
+	font-family:"RenaultSamsungMotors-bold";
+	src:url('eot/RenaultSamsungMotorsBold.eot');
+	src:url('eot/RenaultSamsungMotorsBold.eot?#iefix') format('embedded-opentype'),
+	url('woff/RenaultSamsungMotorsBold.woff') format('woff');
+}
+@font-face{
+	font-weight:400;
+	font-style:normal;
+	font-family:"RenaultSamsungMotors";
+	src:url('eot/RenaultSamsungMotorsRegular.eot');
+	src:url('eot/RenaultSamsungMotorsRegular.eot?#iefix') format('embedded-opentype'),
+	url('woff/RenaultSamsungMotorsRegular.woff') format('woff');
+}
+@font-face{
+	font-weight:300;
+	font-style:normal;
+	font-family:"RenaultSamsungMotors-light";
+	src:url('eot/RenaultSamsungMotorsLight.eot');
+	src:url('eot/RenaultSamsungMotorsLight.eot?#iefix') format('embedded-opentype'),
+	url('woff/RenaultSamsungMotorsLight.woff') format('woff');
+}
+/* NotoSans */
+@font-face{
+	font-weight:700;
+	font-style:normal;
+	font-family:"NotoSansKR";
+	src:url('eot/NotoSansKR-Bold.eot');
+	src:url('eot/NotoSansKR-Bold.eot?#iefix') format('embedded-opentype'),
+	url('woff/NotoSansKR-Bold.woff') format('woff');
+}
+@font-face{
+	font-weight:500;
+	font-style:normal;
+	font-family:"NotoSansKR";
+	src:url('eot/NotoSansKR-Medium.eot');
+	src:url('eot/NotoSansKR-Medium.eot?#iefix') format('embedded-opentype'),
+	url('woff/NotoSansKR-Medium.woff') format('woff');
+}
+@font-face{
+	font-weight:400;
+	font-style:normal;
+	font-family:"NotoSansKR";
+	src:url('eot/NotoSansKR-Regular.eot');
+	src:url('eot/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'),
+	url('woff/NotoSansKR-Regular.woff') format('woff');
+}
+@font-face{
+	font-weight:400;
+	font-style:normal;
+	font-family:"NanumGothic-Regular";
+	src:url('eot/NanumGothic-Regular.eot');
+	src:url('eot/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+	url('woff/NanumGothic-Regular.woff') format('woff');
+}

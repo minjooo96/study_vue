@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* reset */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section{display:block;}
+input[type="checkbox"], input[type="radio"]{cursor:pointer;}
+body{line-height:1;}
+ol, ul, li{list-style:none;}
+blockquote, q{quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+a{color:#000;text-decoration:none;}
+button{cursor:pointer;background-color:transparent;border:none;padding:0;}
+strong{font-weight:700;font-family:'RenaultSamsungMotors-bold';}
+
+/* custom */
+/*
+#9fbbbf
+#bcc1c4
+*/
+
+body{padding-top:30px;}
+.cart-box{width:1200px;margin:0 auto;padding:30px;box-sizing:border-box;overflow:hidden;}
+.cart-box h1{margin-bottom:30px;text-align:center;color:#9fbbbf;font-size:30px;font-weight:bold;}
+.cart-box button{display:inline-block;width:30px;height:30px;background-color:#9fbbbf;vertical-align:middle;color:#fff;font-size:20px;}
+.cart-box input{display:inline-block;width:180px;height:30px;margin:0 2px;border:1px solid #9fbbbf;box-sizing:border-box;vertical-align:middle;}
+.cart-box input.num{width:30px;height:30px;text-align:center;}
+.cart-box button.big{display:inline-block;width:auto;margin-left:2px;padding:0 20px;vertical-align:middle;font-size:16px;}
+
+.cart-box .check{display:inline-block;}
+.cart-box .check label{line-height:30px;}
+.cart-box .check label:before{content:'';display:block;position:absolute;top:50%;left:0;transform:translateY(-50%);width:18px;height:18px;border:1px solid #9fbbbf;box-sizing:border-box;cursor:pointer;}
+.cart-box .check label span{display:inline-block;vertical-align:middle;font-size:16px;}
+.cart-box .check label span.pd_name{width:250px;}
+.cart-box .check label span.pd_price{width:200px;}
+.cart-box .check input[type="checkbox"]{display:block;position:absolute;top:50%;left:0;transform:translateY(-50%);z-index:2;width:18px;height:18px;margin:0;opacity:0;}
+.cart-box .check input[type="checkbox"]:checked + label:before{background:url('img/check.png') no-repeat center center;background-size:90% auto;}
+
+.cart-box .box{margin-top:20px;padding:10px 20px;border:2px solid #bcc1c4;overflow:hidden;}
+.cart-box .box .item{padding:10px 0;border-bottom:1px solid #bcc1c4;}
+.cart-box .box .item:last-child{border-bottom:none;}
+
+.cart-box .all{position:relative;width:100%;margin-bottom:-20px;padding:10px 0;border:none;box-sizing:border-box;}
+.cart-box .all label{padding-left:25px;}
+.cart-box .all button{float:right;width:auto;padding:0 5px;font-size:16px;}
+
+.cart-box .input{margin-top:0;padding:0;border:0;text-align:center;font-size:0;}
+.cart-box .input .item{display:inline-block;padding:0;border:none;text-align:left;vertical-align:middle;font-size:16px;}
+.cart-box .input .item input{}
+.cart-box .input .item input[type="text"]{}
+.cart-box .input .item.amount{font-size:0;}
+.cart-box .input .item.amount input{font-size:16px;}
+.cart-box .input .item.amount button{font-size:16px;}
+.cart-box .input .item:last-child button{cursor:pointer;background-color:#9fbbbf;font-size:16px;transition:background-color 0.5s;}
+
+.cart-box .list{}
+.cart-box .list .item{position:relative;padding-left:25px;padding-right:192px;box-sizing:border-box;font-size:0;}
+.cart-box .list .item .check{width:100%;}
+.cart-box .list .item .check label{display:block;width:100%;}
+.cart-box .list .item .check span{width:33.3%;text-align:center;}
+.cart-box .list .item div.pd_amount{display:block;position:absolute;top:50%;right:0;transform:translateY(-50%);font-size:0;}
+.cart-box .list .item div.pd_amount button{font-size:16px;}
+.cart-box .list .item div.pd_amount input{font-size:16px;}
+.cart-box .list .item button.del{display:inline-block;width:auto;padding:0 20px;vertical-align:middle;font-size:16px;}
+
+.cart-box .calc{}
+.cart-box .calc .item{}
+.cart-box .calc .item span{color:#9fbbbf;font-weight:bold;font-size:20px;}
+
+.list_inout-enter, .list_inout-leave-to{opacity:0;}
+.list_inout-enter-active, .list_inout-leave-active{
+    transition-property:opacity;
+    transition-duration:0.5s;
+    transition-timing-function:ease-in-out;
+}

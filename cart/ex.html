@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="res/style.css">
+</head>
+<body>
+    <section class="cart-box">
+        <h1>내가 등록한 상품</h1>
+        <div class="box input">
+            <div class="item"><input type="text" placeholder="상품명" v-model="inputName" @keydown.enter="listBtn(1)"></div>
+            <div class="item"><input type="text" placeholder="가격" v-model.number="inputPrice" @keydown.enter="listBtn(1)"></div>
+            <div class="item amount">
+                <button type="button" name="button" @click="inputCountBtn(0)">-</button>
+                <input type="text" name="" value="1" class="num" v-model.number="inputCount" @keydown.enter="listBtn(1)">
+                <button type="button" name="button" @click="inputCountBtn(1)">+</button>
+            </div>
+            <div class="item">
+                <button type="button" name="button" class="big" @click="listBtn(1)" >추가</button>
+            </div>
+        </div>
+        <div class="box check all">
+            <input type="checkbox" id="all" v-model="allSelected" @change="allSelectedFn">
+            <label for="all">전체 선택</label>
+
+            <button type="button" name="button" @click="allDelete">전체 삭제</button>
+        </div>
+        <div class="box list" v-if="!listLength">상품을 등록해주세요.</div>
+        <div class="box list" v-if="listLength">
+            <transition-group name="list_inout">
+                <list v-for="(item, index) in listArray"
+                      v-bind:citem="item"
+                      v-bind:cindex="index"
+                      v-bind:key="index"
+                      @clistcount="listCountBtn"
+                      @clistbtn="listBtn"
+                >
+                </list>
+            </transition-group>
+        </div>
+        <div class="box calc">
+            <div class="item">총개수 : <span> {{ resultCount }} </span>개</div>
+            <div class="item">총액 : <span> {{ resultPrice }} </span>원</div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="res/script.js" charset="UTF-8"></script>
+</body>
+</html>

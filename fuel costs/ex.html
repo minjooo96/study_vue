@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex</title>
+    <link rel="stylesheet" href="../font/font.css">
+    <link rel="stylesheet" href="res/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="res/list.json"></script>
+</head>
+<body>
+    <section class="fuel_costs">
+        <article class="step01">
+            <p class="desc">아래 전국 지도에서 보조금을 <strong>확인할 지역을 선택</strong></p>
+            <div class="area">
+                <span>선택한 지역은</span>
+                <select id="sel_city" v-model="selcAreaImg"
+                                      v-on:change="changeImg(selcAreaImg, 0)">
+                    <option v-for="(item, index) in mapArray"
+                            v-bind:value="item.img">{{ item.name }}</option>
+				</select>
+                <span>입니다</span>
+            </div>
+
+            <img id="priceMap" v-bind:src="'res/img/'+nowAreaImg+'.png'" alt="" usemap="#citymap">
+
+            <map name="citymap">
+                <mapbox v-for="(item, index) in mapArray"
+                        v-bind:title="item.name"
+                        v-bind:coords="item.coords"
+                        v-bind:img="item.img"
+                        v-on:overimg="changeImg">
+                </mapbox>
+            </map>
+        </article>
+
+        <article class="step02">
+            <p class="desc">보조금 확인하고 <strong>구매 상담 신청!</strong></p>
+            <div class="top">
+                <p class="calc_wrap">
+                    <strong><em class="calc">{{ nowAreaName }}</em></strong> 에서 구매 시 <br>
+                    보조금 최대 <strong class="fnt_size36"><em class="calc fnt_size46">{{ nowAreaSubsidy }}</em> 만원 지원</strong>
+                </p>
+                <ul class="tip">
+					<li>국고 보조금과 지자체 보조금 합산 금액</li>
+					<li>저공해차 통합정보 누리집 (https://www.ev.or.kr/portal) 기준</li>
+				</ul>
+            </div>
+            <div class="bottom">
+                <div class="twizy">
+					<ul>
+						<li><strong class="item">LIFE</strong> 11,900,000 <em>원</em></li>
+						<li><strong class="item">INTENS</strong> 12,900,000 <em>원</em></li>
+					</ul>
+				</div>
+                <div class="calc_wrap">
+                    <p>
+                        보조금 적용 시 트위지 최종 구매가 <br>
+                        <strong class="fnt_size36">
+                            <span class="fnt_size46">
+                                <em class="calc">{{ nowpurchasePrice }}</em>만원
+                            </span>
+                             부터~
+                        </strong>
+                    </p>
+                    <ul class="tip">
+    					<li>LIFE 트림 기준</li>
+    				</ul>
+                </div>
+                <div class="btn"><button type="button" name="button">구매 상담 신청</button></div>
+            </div>
+        </article>
+    </section>
+
+    <script type="text/javascript" src="res/script.js"></script>
+</body>
+</html>

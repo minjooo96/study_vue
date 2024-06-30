@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex</title>
+    <script type="text/babel" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="res/style.css">
+</head>
+<body>
+    <nav>
+        <h1><a href="javascript:;">LOGO</a></h1>
+        <div class="hambuger"><button type="button" name="button">햄버거</button></div>
+        <ul>
+            <li>
+                <a href="javascript:;" @mouseover="navSubOver(1)">메뉴 1</a>
+                <transition name="nav_fade">
+                    <div class="sub" :class="[menuIndex == 1 ? 'sub-open' : '']" @mouseleave="navSubOut(1)">
+                        <ul>
+                            <li><a href="javascript:console.log('클릭');">메뉴1-1</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </li>
+            <li>
+                <a href="javascript:;" @mouseover="navSubOver(2)">메뉴 2</a>
+                <transition name="nav_fade">
+                    <div class="sub" :class="[menuIndex == 2 ? 'sub-open' : '']" @mouseleave="navSubOut(2)">
+                        <ul>
+                            <li><a href="javascript:console.log('클릭');">메뉴2-1</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴2-2</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </li>
+            <li>
+                <a href="javascript:;" @mouseover="navSubOver(3)">메뉴 3</a>
+                <transition name="nav_fade">
+                    <div class="sub" :class="[menuIndex == 3 ? 'sub-open' : '']" @mouseleave="navSubOut(3)">
+                        <ul>
+                            <li><a href="javascript:console.log('클릭');">메뉴3-1</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴3-2</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴3-3</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </li>
+            <li>
+                <a href="javascript:;" @mouseover="navSubOver(4)">메뉴 4</a>
+                <transition name="nav_fade">
+                    <div class="sub" :class="[menuIndex == 4 ? 'sub-open' : '']" @mouseleave="navSubOut(4)">
+                        <ul>
+                            <li><a href="javascript:console.log('클릭');">메뉴4-1</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴4-2</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴4-3</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴4-4</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </li>
+            <li>
+                <a href="javascript:;" @mouseover="navSubOver(5)">메뉴 5</a>
+                <transition name="nav_fade">
+                    <div class="sub" :class="[menuIndex == 5 ? 'sub-open' : '']" @mouseleave="navSubOut(5)">
+                        <ul>
+                            <li><a href="javascript:console.log('클릭');">메뉴5-1</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴5-2</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴5-3</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴5-4</a></li>
+                            <li><a href="javascript:console.log('클릭');">메뉴5-5</a></li>
+                        </ul>
+                    </div>
+                </transition>
+            </li>
+        </ul>
+        <transition name="menu_bar">
+            <div class="menubar" v-if="subBool" v-bind:style="{ marginLeft: menuBar }"><span>over</span></div>
+        </transition>
+    </nav>
+
+    <section class="sec02">
+        <div class="tabconts">
+            <div class="tab-wrap">
+                <ul>
+                    <li><button type="button" name="button" v-on:click="tabClick(1)" v-bind:class="[isTab == 1 ? 'on' : '']">버튼 1</button></li>
+                    <li><button type="button" name="button" v-on:click="tabClick(2)" v-bind:class="[isTab == 2 ? 'on' : '']">버튼 2</button></li>
+                    <li><button type="button" name="button" v-on:click="tabClick(3)" v-bind:class="[isTab == 3 ? 'on' : '']">버튼 3</button></li>
+                    <li><button type="button" name="button" v-on:click="tabClick(4)" v-bind:class="[isTab == 4 ? 'on' : '']">버튼 4</button></li>
+                </ul>
+            </div>
+            <div class="item-wrap">
+                <div class="item b1" v-if="isTab == 1">콘텐츠 1
+                    <button type="button" name="button" v-on:click="popupOpen">
+                        <img src="res/img/img1.jpg" alt="고양1">
+                    </button>
+                    <p style="margin-top:20px;">슬퍼하는 이국 보고, 별 나는 위에도 그러나 봅니다. 새겨지는 이름과, 것은 하나에 별 잔디가 거외다. 청춘이 흙으로 잔디가 보고, 사람들의 이 소녀들의 슬퍼하는 마디씩 봅니다. 하나에 비둘기, 된 위에도 말 위에 아무 무덤 내일 계십니다. 프랑시스 마리아 당신은 라이너 별 거외다.</p>
+                </div>
+                <div class="item b2" v-else-if="isTab == 2">콘텐츠 2
+                    <button type="button" name="button" v-on:click="popupOpen">
+                        <img src="res/img/img2.jpg" alt="고양2">
+                    </button>
+                    <p style="margin-top:20px;">슬퍼하는 이국 보고, 별 나는 위에도 그러나 봅니다. 새겨지는 이름과, 것은 하나에 별 잔디가 거외다. 청춘이 흙으로 잔디가 보고, 사람들의 이 소녀들의 슬퍼하는 마디씩 봅니다. 하나에 비둘기, 된 위에도 말 위에 아무 무덤 내일 계십니다. 프랑시스 마리아 당신은 라이너 별 거외다.</p>
+                </div>
+                <div class="item b3" v-else-if="isTab == 3">콘텐츠 3
+                    <button type="button" name="button" v-on:click="popupOpen">
+                        <img src="res/img/img3.jpg" alt="고양3">
+                    </button>
+                    <p style="margin-top:20px;">슬퍼하는 이국 보고, 별 나는 위에도 그러나 봅니다. 새겨지는 이름과, 것은 하나에 별 잔디가 거외다. 청춘이 흙으로 잔디가 보고, 사람들의 이 소녀들의 슬퍼하는 마디씩 봅니다. 하나에 비둘기, 된 위에도 말 위에 아무 무덤 내일 계십니다. 프랑시스 마리아 당신은 라이너 별 거외다.</p>
+                </div>
+                <div class="item b4" v-else>콘텐츠 4
+                    <button type="button" name="button" v-on:click="popupOpen">
+                        <img src="res/img/img4.png" alt="고양4">
+                    </button>
+                    <p style="margin-top:20px;">슬퍼하는 이국 보고, 별 나는 위에도 그러나 봅니다. 새겨지는 이름과, 것은 하나에 별 잔디가 거외다. 청춘이 흙으로 잔디가 보고, 사람들의 이 소녀들의 슬퍼하는 마디씩 봅니다. 하나에 비둘기, 된 위에도 말 위에 아무 무덤 내일 계십니다. 프랑시스 마리아 당신은 라이너 별 거외다.</p>
+                </div>
+            </div>
+        </div>
+        <transition name="pop_fade">
+            <!-- <div class="popup" v-bind:class="{ 'open' : isPopOpen }"> -->
+            <div class="popup" v-if="isPopOpen">
+                <span class="btn_x"><button type="button" name="button" v-on:click="popupClose">X</button></span>
+                <div class="popup_con"></div>
+            </div>
+        </transition>
+        <transition name="bg_fade">
+            <div class="backbg" v-if="isPopOpen" v-on:click="popupClose"></div>
+        </transition>
+    </section>
+
+    <script type="text/javascript" src="res/script.js"></script>
+</body>
+</html>
